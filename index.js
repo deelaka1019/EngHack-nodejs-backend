@@ -3,6 +3,8 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 require("dotenv").config();
 
+const userRouter = require("./routes/userRouter");
+
 // set up express
 const app = express();
 app.use(express.json());
@@ -25,3 +27,6 @@ mongoose.connect(
       console.log("MongoDB connection established");
     }
 );
+
+// set up routes
+app.use("/users", userRouter);
