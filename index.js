@@ -4,6 +4,7 @@ const cors = require("cors");
 require("dotenv").config();
 
 const userRouter = require("./routes/userRouter");
+const readingRouter = require("./routes/readingRouter");
 
 // set up express
 const app = express();
@@ -30,3 +31,4 @@ mongoose.connect(
 
 // set up routes
 app.use("/users", userRouter);
+app.use("/readings", readingRouter);
