@@ -5,6 +5,7 @@ require("dotenv").config();
 
 const userRouter = require("./routes/userRouter");
 const readingRouter = require("./routes/readingRouter");
+const articleRouter = require("./routes/articleRouter");
 
 // set up express
 const app = express();
@@ -32,3 +33,4 @@ mongoose.connect(
 // set up routes
 app.use("/users", userRouter);
 app.use("/readings", readingRouter);
+app.use("/articles", articleRouter);
